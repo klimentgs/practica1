@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Enter Person</title>
+</head>
+<body>
+
+
+<form action="#" th:action="@{/new}" th:object="${person}" method="post">
+	<table>
+		
+		<tr>
+			<td>Nombre:</td>
+			<td><input type="text" th:field="*{nombre}"/></td>
+			<td th:if="${#fields.hasErrors('nombre')}"
+			    th:errors="*{nombre}">Nombre Error</td>
+		</tr>
+
+		<tr>
+			<td>recorrido:</td>
+			<td><input type="text" th:field="*{recorrido}"/></td>
+			<td th:if="${#fields.hasErrors('recorrido')}"
+			    th:errors="*{recorrido}">recorrido Error</td>
+		</tr>
+			
+		<tr>
+			<td>vehiculo:</td>
+			<td><input type="text" th:field="*{vehiculo}"/></td>
+			<td th:if="${#fields.hasErrors('vehiculo')}"
+			    th:errors="*{vehiculo}">vehiculo Error</td>
+		</tr>			
+			
+		<tr>
+			<td><input type="submit" value="evaluar"/></td>
+		</tr>
+	</table>
+
+
+</form>
+
+</body>
+</html>
